@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "innovative_companies"
+
+require_relative '..config/environment'
+
+InnovativeCompanies::Scraper.scrape_companies
+InnovativeCompanies::Cli.new.start
+
+# InnovativeCompanies::Scraper.scrape_companies
+# InnovativeCompanies::Scraper.scrape_profile(InnovativeCompanies::Companies.all[0])
+
+
+require "irb"
+IRB.start(__FILE__)
